@@ -1,0 +1,31 @@
+# Local environments and caches
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Created by training. Not part of the submission.
+# CI runs python -m mlops.main and uploads a fresh mlflow.db.
+mlruns/
+mlflow.db
+src/mlflow.db
+*.ses
+
+# Assignment brief. Keep it locally. Do not upload it.
+assignment/
+
+# Raw recording takes. part1.mkv is over GitHub's 100 MB limit.
+# The short demo to upload is recordings/merged_recording.mkv.
+recordings/part1.mkv
+recordings/part2.mkv
+
+# Editor / OS
+.cursor/
+.idea/
+.vscode/
+.DS_Store
+*~
+.~lock.*

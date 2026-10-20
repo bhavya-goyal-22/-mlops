@@ -1,0 +1,43 @@
+data:
+  dataset_id: 45
+  path: data/raw/heart_disease.csv
+  cleaned_path: data/cleaned/heart_disease.csv
+  train_path: data/cleaned/train.csv
+  test_path: data/cleaned/test.csv
+  overview_path: data/cleaned/overview.csv
+
+preprocess:
+  drop_missing: [ca, thal]
+  target: target
+  categorical: [cp, restecg, slope, thal]
+
+eda:
+  figures_dir: reports/figures
+  numeric: [age, trestbps, chol, thalach, oldpeak, ca]
+
+model:
+  target: target
+  random_state: 42
+  test_size: 0.2
+  cv_folds: 5
+  numeric: [age, trestbps, chol, thalach, oldpeak, ca]
+  categorical: [cp, restecg, slope, thal]
+  binary: [sex, fbs, exang]
+  scoring: [accuracy, precision, recall, roc_auc]
+  models:
+    logistic_regression:
+      C: [0.1, 1.0, 10.0]
+    random_forest:
+      n_estimators: [100, 200]
+      max_depth: [3, 5, 10]
+
+tracking:
+  experiment: heart-disease
+  tracking_uri: mlflow.db
+
+package:
+  path: models/heart_disease.onnx
+
+api:
+  host: 0.0.0.0
+  port: 8000
