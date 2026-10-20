@@ -2,8 +2,6 @@
 
 End-to-end classifier for [UCI Heart Disease](https://archive.ics.uci.edu/dataset/45/heart+disease) (id 45): download, clean, EDA, two models, MLflow, ONNX, FastAPI, Docker, Minikube, Prometheus, Grafana.
 
-For what each file does and how to start training, the API, Docker, Kubernetes, logging, Prometheus, Grafana, and GitHub Actions, read [GUIDE.md](GUIDE.md).
-
 Paths, columns, and hyperparameters live in `configs/config.yaml`. Classes in `src/mlops/` own the behavior.
 
 ## Setup
